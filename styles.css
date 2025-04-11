@@ -1,0 +1,77 @@
+:root {
+    --maize: #FFF07C;
+    --scrGreen: #80FF72;
+    --elecBlue: #7EE8FA;
+    --teaRose: #EEC0C6;
+    --lightCoral: #E58C8A;
+}
+#grad {
+    background-image: linear-gradient( to right, var(--teaRose), var(--lightCoral));
+}
+#grad2 {
+    background-image: linear-gradient( to bottom right, var(--maize), var(--elecBlue));
+    padding: 20px;
+}
+       
+#purchaseForm{
+    max-width: 600px;
+    padding: 20px; 
+    margin: auto;
+    width: 50%;
+}
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0 auto; 
+    
+}
+        
+form { 
+    display: grid; 
+    grid-gap: 15px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+input, select { 
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box; 
+}
+
+button { 
+    padding: 10px 15px; 
+    background-color: #0078d4; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+
+button:hover { 
+    background-color: #106ebe; 
+}
+
+.form-group { 
+    margin-bottom: 15px; 
+}
+
+#responseMessage {
+    margin-top: 20px; 
+    padding: 10px; 
+    border-radius: 4px; 
+    display: none; 
+    }
+
+.header-container {
+    display: flex;
+    align-items: center; /* Vertically centers items */
+    gap: 20px; /* Space between image and title */
+    margin-bottom: 20px;
+}
+
+.header-image {
+    height: 60px; /* Adjust as needed */
+    width: auto; /* Maintains aspect ratio */
+}

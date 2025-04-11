@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Ticket Purchase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="grad">
+    <div id="grad2" class="header-container">
+        <img src="img/b3f833ec-fba2-4ed5-a840-cc80f8b2da16.png" alt="Concert Logo" class="header-image">
+        <h1>TicketHub Checkout</h1>
+    </div>
+    <div id="purchaseForm">
+        <form id="ticketForm">
+            <!-- Concert ID -->
+            <div class="form-group">
+                <label for="concertId">Concert ID:</label>
+                <select id="concertId" name="concertId" required >
+                    <option value="102">Average Band Name - $40</option>
+                    <option value="64">Shiny Rock Group - $20</option>
+                    <option value="113">Emo Jazz Trio - $55</option>
+                    </select>
+                <div class="error-message" id="concertIdError"></div>
+            </div>
+                
+            <!-- Quantity -->
+            <div class="form-group">
+                <label for="quantity">Ticket Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="25" required>
+                <div class="error-message" id="quantityError"></div>
+            </div>
+            
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            
+            
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+                <div class="error-message" id="nameError"></div>
+            </div>
+            
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required 
+                       pattern="^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"
+                       placeholder="555-123-4567">
+                <div class="error-message" id="phoneError"></div>
+            </div>
+            
+            <h3>Payment Information</h3>
+            
+            <!-- Credit Card -->
+            <div class="form-group">
+                <label for="creditCard">Credit Card Number:</label>
+                <input type="text" id="creditCard" name="creditCard" required 
+                       pattern="[0-9]{13,16}">
+                <div class="error-message" id="creditCardError"></div>
+            </div>
+            
+            <!-- Expiration -->
+            <div class="form-group">
+                <label for="expiration">Expiration Date (MM/YY):</label>
+                <input type="text" id="expiration" name="expiration" required
+                       pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                       placeholder="MM/YY">
+                <div class="error-message" id="expirationError"></div>
+            </div>
+            
+            <!-- Security Code -->
+            <div class="form-group">
+                <label for="securityCode">Security Code:</label>
+                <input type="text" id="securityCode" name="securityCode" required
+                       pattern="[0-9]{3,4}">
+                <div class="error-message" id="securityCodeError"></div>
+            </div>
+            
+            <h3>Billing Address</h3>
+            
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Street Address:</label>
+                <input type="text" id="address" name="address" required minlength="3" maxlength="50">
+                <div class="error-message" id="addressError"></div>
+            </div>
+            
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required minlength="3" maxlength="50">
+                <div class="error-message" id="cityError"></div>
+            </div>
+            
+            <!-- Province -->
+            <div class="form-group">
+                <label for="province">Province:</label>
+                <select id="province" name="province" required>
+                    <option value="">Select Province</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="YT">Yukon</option>
+                </select>
+                <div class="error-message" id="provinceError"></div>
+            </div>
+            
+            <!-- Postal Code -->
+            <div class="form-group">
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" name="postalCode" required
+                       pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]"
+                       placeholder="A1A 1A1">
+                <div class="error-message" id="postalCodeError"></div>
+            </div>
+            
+            <!-- Country -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required 
+                       value="Canada" readonly>
+                <div class="error-message" id="countryError"></div>
+            </div>
+            
+            <button type="submit">Purchase Tickets</button>
+        </form>
+        
+        <div id="responseMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
